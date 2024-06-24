@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        sum = 0;
+        n = parseInt(prompt("Enter a three-digit positive integer: "));
+        temp = n;
+        while (temp > 0) {
+            remainder = temp % 10;
+            sum += remainder ** 3;
+            temp = parseInt(temp / 10);
+        }
+
+        if (sum == n) {
+            document.write("Number is an Armstrong number");
+        } else {
+            document.write("Number is not an Armstrong number");
+        }
+    </script>
+</body>
+</html>
