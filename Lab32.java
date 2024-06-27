@@ -5,25 +5,36 @@ public class Lab32 {
         Scanner sc = new Scanner(System.in);
         String s1 = new String();
         String s2 = new String();
-        System.out.println("Enter string 1 :- ");
-        s1 = sc.nextLine();
-        System.out.println("Enter string 2 :- ");
+        System.out.println("Enter the number of words you want to enter :-");
+        int n = sc.nextInt();
+        String[] words = new String[n];
+        for(int i=0;i<n;i++){
+            System.out.println("Enter the word :-");
+            words[i]=sc.nextLine();
+        }
+        Random r = new Random();
+        int random=r.nextInt(n);
+        s1=words[random];
+        System.out.println("Enter anagram for  "+s1+":-");
         s2 = sc.nextLine();
-        int temp = 0;
-        if(s1.length()!=s2.length()){
+        char[] arr1 = s1.toCharArray();
+        char[] arr2 = s2.toCharArray();
+        boolean flag = true;
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        if(arr1.length!=arr2.length){
             System.out.println("Not Anagram Strings");
         }
         else{
-            for(int i=0;i<s1.length();i++){
-                for(int j=0;j<s2.length();j++){
-                    if(s1.charAt(i)==s2.charAt(j)){    
-                        temp++;
-                        break;
+            for(int i=0;i<arr1.length;i++){
+                for(int j=0;j<arr2.length;j++){
+                    if(arr1[i]!=arr2[j]){
+                        flag=false;
                     }
-                }    
+                }
             }
         }
-        if(temp == s1.length()){
+        if(flag=true){
             System.out.println("Anagram Strings");
         }
         else{
