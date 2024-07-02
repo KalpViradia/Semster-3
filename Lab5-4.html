@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <input type="text" placeholder="Enter Username" id="uname"/></br>
+    <input type="text" placeholder="Enter Email" id="email"/></br>
+    <input type="number" placeholder="Enter Enrollment number" id="ennum"/></br>
+    <input type="number" placeholder="Enter Age" id="age"></br>
+    <input type="text" placeholder="Enter Password" id="password"/></br>
+    <input type="text" placeholder="Confirm Password" id="cpassword"/></br>
+    <button onclick="validate()">Submit</button>
+    <script>
+        function validate(){
+            var uname = document.getElementById('uname').value;
+            var email = document.getElementById('email').value;
+            var ennum = document.getElementById('ennum').value;
+            var age = document.getElementById('age').value;
+            var password = document.getElementById('passowrd').value;
+            var cpassword = document.getElementById('cpassword').value;
+            var vemail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            var validemail = new RegExp(vemail);
+            var vpass = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}";
+            var validpass = new RegExp(vpass);
+            if(uname.length()<8){
+                alert("Username must be of minimum 8 characters");
+            }
+            if(!vemail.test(email)){
+                alert("Invalid Email");
+            }
+            if(age<=17){
+                alert("Age must be greater than 18");
+            }
+            if(ennum.length()!=11){
+                alert("Enrollment number must be of 11 characters");
+            }
+            if(!validpass.test(password)){
+                alert("Enter valid password");
+            }
+            if(password!=cpassword){
+                alert("Password and Confirm password must be same");
+            }
+        }
+    </script>
+</body>
+</html>

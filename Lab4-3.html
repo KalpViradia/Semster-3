@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        let students=[
+            {
+                Name:'Meet',
+                Branch:'CSE',
+                Class:'3A',
+                Batch:'1',
+                RollNo:117
+            },
+            {
+                Name:'Kalp',
+                Branch:'CSE',
+                Class:'3A',
+                Batch:'6',
+                RollNo:215
+            },
+            {
+                Name:'Dhairya',
+                Branch:'CSE',
+                Class:'3A',
+                Batch:'8',
+                RollNo:240
+            },
+            {
+                Name:'Varun',
+                Branch:'CSE',
+                Class:'3A',
+                Batch:'8',
+                RollNo:254
+            },
+            {
+                Name:'Taksh',
+                Branch:'CSE',
+                Class:'3A',
+                Batch:'9',
+                RollNo:255
+            },
+            {
+                Name:'Malay',
+                Branch:'CSE',
+                Class:'3B',
+                Batch:'1',
+                RollNo:311
+            }
+        ]
+        document.write("<table border=1>");
+        document.write("<tr>");
+        document.write("<th>"+"Name"+"</th>");
+        document.write("<th>"+"Branch"+"</th>");
+        document.write("<th>"+"Class"+"</th>");
+        document.write("<th>"+"Batch"+"</th>")
+        document.write("<th>"+"RollNo"+"</th>");    
+        document.write("</tr>");
+        for(i=0;i<students.length;i++){
+            document.write("<tr>");
+            document.write("<td>"+students[i].Name+"</td>");
+            document.write("<td>"+students[i].Branch+"</td>");
+            document.write("<td>"+students[i].Class+"</td>");
+            document.write("<td>"+students[i].Batch+"</td>");
+            document.write("<td>"+students[i].RollNo+"</td>");
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+</html>

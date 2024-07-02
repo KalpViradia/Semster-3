@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4"><input type="text" id="display"/></td>
+        </tr>
+        <tr>
+            <td><button onclick="show('7')">7</button></td>
+            <td><button onclick="show('8')">8</button></td>
+            <td><button onclick="show('9')">9</button></td>
+            <td><button onclick="show('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="show('4')">4</button></td>
+            <td><button onclick="show('5')">5</button></td>
+            <td><button onclick="show('6')">6</button></td>
+            <td><button onclick="show('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="show('1')">1</button></td>
+            <td><button onclick="show('2')">2</button></td>
+            <td><button onclick="show('3')">3</button></td>
+            <td><button onclick="show('*')">*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="clear1()">C</button></td>
+            <td><button onclick="show('0')">0</button></td>
+            <td><button onclick="total()">=</button></td>
+            <td><button onclick="show('/')">/</button></td>
+        </tr>
+        <tr>
+            <td colspan="4"><button onclick="remove()">Backspace</button></td>
+        </tr>
+    </table>
+    <script>
+        function show(String){
+            document.getElementById("display").value+=String;
+        }
+        function total(){
+            var ans = eval(document.getElementById('display').value);
+            document.getElementById('display').value=ans;
+        }
+        function clear1(){
+            document.getElementById('display').value = "";
+        }
+        function remove(){
+            var substr=document.getElementById('display').value;
+            document.getElementById('display').value=substr.substring(0,substr.length-1);
+        }
+    </script>
+</body>
+</html>

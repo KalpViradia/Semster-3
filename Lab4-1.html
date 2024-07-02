@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        let Faculties=[
+            {
+                Name:'Arjun Sir',
+                Department:'CSE',
+                Experience:'12 Years',
+                Salary:300000
+            },
+            {
+                Name:'Prasant Sir',
+                Department:'Maths',
+                Experience:'11 Years',
+                Salary:200000
+            },
+            {
+                Name:'Puneet Sir',
+                Department:'Maths',
+                Experience:'15 Years',
+                Salary:250000
+            },
+            {
+                Name:'Chirag Sir',
+                Department:'CSE',
+                Experience:'4 Years',
+                Salary:200000
+            },
+            {
+                Name:'Rupesh Sir',
+                Department:'CSE',
+                Experience:'14 Years',
+                Salary:250000
+            },
+            {
+                Name:'Darshan Sir',
+                Department:'Maths',
+                Experience:'13 Years',
+                Salary:150000
+            }
+        ]
+        document.write("<table border=1>");
+        document.write("<tr>");
+        document.write("<th>"+"Name"+"</th>");
+        document.write("<th>"+"Department"+"</th>");
+        document.write("<th>"+"Experience"+"</th>");
+        document.write("<th>"+"Salary"+"</th>");    
+        document.write("</tr>");
+        for(i=0;i<Faculties.length;i++){
+            document.write("<tr>");
+            document.write("<td>"+Faculties[i].Name+"</td>");
+            document.write("<td>"+Faculties[i].Department+"</td>");
+            document.write("<td>"+Faculties[i].Experience+"</td>");
+            document.write("<td>"+Faculties[i].Salary+"</td>");
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        let products=[
+            {
+                Name:'CE 4',
+                Manufacturer:'One plus',
+                Type:'Phone',
+                Cost:25000,
+                Warrenty:'1 Years',
+            },
+            {
+                Name:'G 15',
+                Manufacturer:'Dell',
+                Type:'Laptop',
+                Cost:70000,
+                Warrenty:'1 Years',
+            },
+            {
+                Name:'ColorFit Ultra',
+                Manufacturer:'Noise',
+                Type:'Watch',
+                Cost:5000,
+                Warrenty:'2 Years',
+            },
+            {
+                Name:'2 Neo',
+                Manufacturer:'Realme',
+                Type:'Neckband',
+                Cost:2000,
+                Warrenty:'1 Years',
+            },
+            {
+                Name:'Tab A9',
+                Manufacturer:'Samsung',
+                Type:'Tablet',
+                Cost:45000,
+                Warrenty:'3 Years',
+            },
+            {
+                Name:'LOQ',
+                Manufacturer:'Lenovo',
+                Type:'Laptop',
+                Cost:85000,
+                Warrenty:'1 Years',
+            },
+        ]
+        document.write("<table border=1>");
+        document.write("<tr>");
+        document.write("<th>"+"Name"+"</th>");
+        document.write("<th>"+"Manufacturer"+"</th>");
+        document.write("<th>"+"Type"+"</th>");
+        document.write("<th>"+"Cost"+"</th>")
+        document.write("<th>"+"Warrenty"+"</th>");
+        document.write("</tr>");
+        for(i=0;i<products.length;i++){
+            document.write("<tr>");
+            document.write("<td>"+products[i].Name+"</td>");
+            document.write("<td>"+products[i].Manufacturer+"</td>");
+            document.write("<td>"+products[i].Type+"</td>");
+            document.write("<td>"+products[i].Cost+"</td>");
+            document.write("<td>"+products[i].Warrenty+"</td>");
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+</html>
