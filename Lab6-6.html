@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 1em;
+        }
+        div + div {
+            margin-top: 1em;
+        }
+        label {
+            display: block;
+            margin-bottom: .5em;
+            color: #333333;
+        }
+        input {
+            border: 1px solid #ccc;
+            padding: .5em;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 1em;
+            border: none;
+            background: #007BFF;
+            color: white;
+            border-radius: .3em;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .error {
+            color: red;
+            font-size: 0.875em;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Registration Form</h2>
+    <form id="registrationForm">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+            <div id="nameError" class="error"></div>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email">
+            <div id="emailError" class="error"></div>
+        </div>
+        <div>
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone">
+            <div id="phoneError" class="error"></div>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <div id="passwordError" class="error"></div>
+        </div>
+        <br>
+        <button type="button" onclick="validateForm()">Register</button>
+    </form>
+    <script>
+        function validateForm() {
+        document.getElementById('nameError').innerText = '';
+        document.getElementById('emailError').innerText = '';
+        document.getElementById('phoneError').innerText = '';
+        document.getElementById('passwordError').innerText = '';
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const password = document.getElementById('password').value;
+
+        let isValid = true;
+
+        if (name === '') {
+            document.getElementById('nameError').innerText = 'Name is required';
+            isValid = false;
+        }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email === '') {
+            document.getElementById('emailError').innerText = 'Email is required';
+            isValid = false;
+        } else if (!emailPattern.test(email)) {
+            document.getElementById('emailError').innerText = 'Invalid email format';
+            isValid = false;
+        }
+
+        const phonePattern = /^[0-9]{10}$/;
+        if (phone === '') {
+            document.getElementById('phoneError').innerText = 'Phone number is required';
+            isValid = false;
+        } else if (!phonePattern.test(phone)) {
+            document.getElementById('phoneError').innerText = 'Invalid phone number. Must be 10 digits';
+            isValid = false;
+        }
+
+        if (password === '') {
+            document.getElementById('passwordError').innerText = 'Password is required';
+            isValid = false;
+        } else if (password.length < 8) {
+            document.getElementById('passwordError').innerText = 'Password must be at least 8 characters long';
+            isValid = false;
+        }
+
+        if (isValid) {
+            alert('Registration successful!');
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            transition: color 0.3s;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Mouse Events and Button Clicks</h1>
+    <button id="dateTimeButton">Find Time</button>
+    <p id="dateTimeDisplay"></p>
+    <button id="redButton">Red</button>
+    <button id="greenButton">Green</button>
+
+    <script>
+        const heading = document.getElementById('heading');
+        heading.addEventListener('mouseover', () => {
+            heading.style.color = 'yellow';
+        });
+        heading.addEventListener('mouseout', () => {
+            heading.style.color = 'black';
+        });
+
+        const dateTimeButton = document.getElementById('dateTimeButton');
+        const dateTimeDisplay = document.getElementById('dateTimeDisplay');
+        dateTimeButton.addEventListener('click', () => {
+            const now = new Date();
+            dateTimeDisplay.textContent = now.toString();
+        });
+
+        const redButton = document.getElementById('redButton');
+        const greenButton = document.getElementById('greenButton');
+        redButton.addEventListener('click', () => {
+            document.body.style.backgroundColor = 'red';
+        });
+        greenButton.addEventListener('click', () => {
+            document.body.style.backgroundColor = 'green';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            transition: color 0.3s;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .output {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Press a Key</h1>
+    <div class="output" id="output"></div>
+
+    <script>
+        document.addEventListener('keydown', (event) => {
+            const key = event.key.toLowerCase();
+            const output = document.getElementById('output');
+            const vowels = ['a', 'e', 'i', 'o', 'u'];
+            if (vowels.includes(key)) {
+                output.textContent = `Vowel "${key}" is pressed. Key code: ${event.keyCode}`;
+            } else {
+                output.textContent = `Key "${key}" is pressed. Key code: ${event.keyCode}`;
+            }
+        });
+
+        document.addEventListener('keyup', () => {
+            document.body.style.backgroundColor = 'blue';
+        });
+    </script>
+</body>
+</html>

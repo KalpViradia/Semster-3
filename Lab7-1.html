@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        function printsum(sum) {
+            console.log(sum);
+        }
+        function power(num1,num2,mycallback) {
+            sum=Math.pow(num1,num2);
+            mycallback(sum);
+        }
+        power(2,8,printsum);
+    </script>
+</body>
+</html>

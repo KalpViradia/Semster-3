@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <button id="Event">Mouse Event</button>
+    <script>
+        document.getElementById('Event').addEventListener('click', ()=>{
+            console.log('Mouse clicked');
+        });
+        document.getElementById('Event').addEventListener('dblclick', ()=>{
+            console.log('Mouse double-clicked');
+        });
+        document.getElementById('Event').addEventListener('mousedown', ()=>{
+            console.log('Mouse down');
+        });
+        document.getElementById('Event').addEventListener('mousemove', ()=>{
+            console.log('Mouse move');
+        });
+        document.getElementById('Event').addEventListener('mouseover', ()=>{
+            console.log('Mouse over');
+        });
+        document.getElementById('Event').addEventListener('mouseout', ()=>{
+            console.log('Mouse out');
+        });
+        document.getElementById('Event').addEventListener('mouseup', ()=>{
+            console.log('Mouse up');
+        });
+    </script>
+</body>
+</html>

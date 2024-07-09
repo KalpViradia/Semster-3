@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        if(true) {
+            let a = 10;
+            var b = 20;
+            console.log('Let value: ',a);
+            console.log('Var value: ',b);
+        }
+        //console.log('Outside loop Let value: ',a); (will not work as let only is available to the same block)
+        console.log('Outside loop Var value: ',b);
+        const c = 30;
+        console.log('Const value: ',c);
+        console.log('Const value + 5: ',c+5);
+        // c = c+5;
+        // console.log('Updated Const value: ',c); (will not work as we cannot change value of const)
+    </script>
+</body>
+</html>

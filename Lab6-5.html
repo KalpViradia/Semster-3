@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        #img{
+            width: 100px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="moveup()" id="up">Up</button>
+    <button onclick="movedown()" id="down">Down</button>
+    <button onclick="moveright()" id="right">Right</button>
+    <button onclick="moveleft()" id="left">Left</button>
+    <button id="change">Change</button>
+    <br><br>
+    <img id="img" src="D:/College/Semster 2/Web Designing/Programs/Images/Logo.png"/>
+    <script>
+        var img = document.getElementById('img');
+        var x = 50;
+        var y = 50;
+        let arr = new Array(); 
+        var i = 0;
+        arr = ["D:/College/Semster 2/Web Designing/Programs/Images/Statue Of Unity/slider-1.png",
+        "D:/College/Semster 2/Web Designing/Programs/Images/Statue Of Unity/slider-2.png",
+        "D:/College/Semster 2/Web Designing/Programs/Images/Statue Of Unity/slider-3.png",
+        "D:/College/Semster 2/Web Designing/Programs/Images/Statue Of Unity/slider-4.png"];
+        function moveup() {
+            x = x - 50;
+            img.style.top = x+"px";
+        }
+        function movedown() {
+            x = x + 50;
+            img.style.top = x+"px";
+        }
+        function moveright() {
+            y = y + 50;
+            img.style.left = y+"px";
+        }
+        function moveleft() {
+            y = y - 50;
+            img.style.left = y+"px";
+        }
+        document.getElementById('change').addEventListener('click', ()=>{
+            document.getElementById('img').src = arr[i];
+            i++;
+        });
+        document.getElementById('img').addEventListener('click', ()=>{
+            document.getElementById('img').src = arr[i];
+            i++;
+        });
+    </script>
+</body>
+</html>

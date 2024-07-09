@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 1em;
+        }
+        div + div {
+            margin-top: 1em;
+        }
+        label {
+            display: block;
+            margin-bottom: .5em;
+            color: #333333;
+        }
+        input, button {
+            border: 1px solid #ccc;
+            padding: .5em;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background: #007BFF;
+            color: white;
+            border-radius: .3em;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: .5em;
+            background: #f9f9f9;
+            margin-bottom: .5em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        li:nth-child(odd) {
+            background: #eee;
+        }
+        .actions {
+            display: flex;
+            gap: .5em;
+        }
+    </style>
+</head>
+<body>
+    <h2>CRUD Operations on Array</h2>
+    <form id="crudForm">
+        <div>
+            <label for="item">Item</label>
+            <input type="text" id="item" name="item">
+        </div>
+        <button type="button" onclick="addItem()">Add Item</button>
+    </form>
+    <h3>Items List</h3>
+    <ul id="itemsList"></ul>
+    <script>
+        let items = [];
+
+        function addItem() {
+            const itemInput = document.getElementById('item');
+            const item = itemInput.value.trim();
+            if (item) {
+                items.push(item);
+                itemInput.value = '';
+                renderItems();
+            }
+        }
+
+        function renderItems() {
+            const itemsList = document.getElementById('itemsList');
+            itemsList.innerHTML = '';
+            items.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <span>${item}</span>
+                    <div class="actions">
+                        <button onclick="editItem(${index})">Edit</button>
+                        <button onclick="deleteItem(${index})">Delete</button>
+                    </div>
+                `;
+                itemsList.appendChild(li);
+            });
+        }
+
+        function editItem(index) {
+            const newItem = prompt('Edit item:', items[index]);
+            if (newItem !== null && newItem.trim() !== '') {
+                items[index] = newItem.trim();
+                renderItems();
+            }
+        }
+
+        function deleteItem(index) {
+            items.splice(index, 1);
+            renderItems();
+        }
+
+        renderItems();
+    </script>
+</body>
+</html>

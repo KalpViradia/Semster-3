@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <button id="Event">Key Event</button>
+    <script>
+        document.getElementById('Event').addEventListener('keydown', ()=>{
+            console.log('key down');
+        });
+        document.getElementById('Event').addEventListener('keypress', ()=>{
+            console.log('Key press');
+        });
+        document.getElementById('Event').addEventListener('keyup', ()=>{
+            console.log('Key up');
+        });
+    </script>
+</body>
+</html>

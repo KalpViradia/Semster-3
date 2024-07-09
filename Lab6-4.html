@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <button id="Event">Form Event</button>
+    <script>
+        document.getElementById('Event').addEventListener('blur', ()=>{
+            console.log('blur');
+        });        
+        document.getElementById('Event').addEventListener('change', ()=>{
+            console.log('change');
+        });
+        document.getElementById('Event').addEventListener('focus', ()=>{
+            console.log('focus');
+        });
+        document.getElementById('Event').addEventListener('reset', ()=>{
+            console.log('reset');
+        });
+        document.getElementById('Event').addEventListener('select', ()=>{
+            console.log('select');
+        });
+        document.getElementById('Event').addEventListener('submit', ()=>{
+            console.log('submit');
+        });
+    </script>
+</body>
+</html>
