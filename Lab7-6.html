@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        spi = [8,8.2,9.9,7];
+        let [first,second,third] = spi;
+        console.log('Destructured Array: ');
+        console.log(first);
+        console.log(second);
+        console.log(third);
+
+        studentDetail = {
+            name: 'ABC',
+            age: 20,
+            address: 'XYZ',
+            marks: [10, 20, 30, 40],
+            email: 'ABC@XYZ@gmail.com',
+            phone: '1234567890'
+        }
+        let {name,email,age} = studentDetail;
+        console.log('Destructured Object: ');
+        console.log(name);
+        console.log(email);
+        console.log(age);
+    </script>
+</body>
+</html>

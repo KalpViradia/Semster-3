@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .checkbox-container {
+            text-align: left;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Checkbox Selection</h1>
+    <div class="checkbox-container">
+        <label><input type="checkbox" value="1001">1001</label><br>
+        <label><input type="checkbox" value="1002">1002</label><br>
+        <label><input type="checkbox" value="1003">1003</label><br>
+        <label><input type="checkbox" value="1004">1004</label><br>
+        <label><input type="checkbox" value="1005">1005</label><br>
+    </div>
+    <p>Selected Roll Numbers: <span id="selectedRollNumbers"></span></p>
+    <script>
+        function updateSelectedRollNumbers() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const selectedValues = [];
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    selectedValues.push(checkbox.value);
+                }
+            });
+            document.getElementById('selectedRollNumbers').textContent = selectedValues.join(', ');
+        }
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateSelectedRollNumbers);
+        });
+    </script>
+</body>
+</html>
