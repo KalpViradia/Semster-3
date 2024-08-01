@@ -17,25 +17,42 @@ SELECT * INTO WORLDCUP FROM CRICKET;
 --2. Create table T20 from cricket with first two columns with no data.
 SELECT NAME,CITY INTO T20 FROM CRICKET WHERE 1=2; 
 
---3. Create table IPL From Cricket with No DataSELECT * INTO IPL FROM CRICKET WHERE 1=2;--Part-B :-CREATE TABLE EMPLOYEE(
+--3. Create table IPL From Cricket with No Data
+SELECT * INTO IPL FROM CRICKET WHERE 1=2;
+
+--Part-B :-
+
+CREATE TABLE EMPLOYEE(
 NAME VARCHAR(50),
 CITY VARCHAR(20),
-AGE INT);INSERT INTO EMPLOYEE VALUES 
+AGE INT);
+
+INSERT INTO EMPLOYEE VALUES 
 ('JAY PATEL','RAJKOT',30),
 ('RAHUL DAVE','BARODA',35),
 ('JEET PATEL','SURAT',31),
-('VIJAY RAVAL','RAJKOT',30);--1. Create table Employee_detail from Employee with all the columns and data.
+('VIJAY RAVAL','RAJKOT',30);
+
+--1. Create table Employee_detail from Employee with all the columns and data.
 SELECT * INTO EMPLOYEE_DETAIL FROM EMPLOYEE;
 
 --2. Create table Employee_data from Employee with first two columns with no data.
 SELECT NAME,CITY INTO EMPLOYEE_DATA FROM EMPLOYEE WHERE 1=2;
 
---3. Create table Employee_info from Employee with no DataSELECT * INTO EMPLOYEE_INFO FROM EMPLOYEE WHERE 1=2;--Part–C :-
+--3. Create table Employee_info from Employee with no Data
+SELECT * INTO EMPLOYEE_INFO FROM EMPLOYEE WHERE 1=2;
+
+--Partâ€“C :-
 --Perform following queries on Employee table.
 --1. Insert the Data into Employee_info from Employee whose CITY is Rajkot
 INSERT INTO EMPLOYEE_INFO SELECT * FROM EMPLOYEE WHERE CITY = 'RAJKOT';
 
---2. Insert the Data into Employee_info from Employee whose age is more than 32.INSERT INTO EMPLOYEE_INFO SELECT * FROM EMPLOYEE WHERE AGE >32;--Update Operation--Part–A :-
+--2. Insert the Data into Employee_info from Employee whose age is more than 32.
+INSERT INTO EMPLOYEE_INFO SELECT * FROM EMPLOYEE WHERE AGE >32;
+
+--Update Operation
+
+--Partâ€“A :-
 --From the above given tables perform the following queries (UPDATE Operation):
 --1. Update deposit amount of all customers from 3000 to 5000. (Use Deposit Table)
 UPDATE DEPOSIT SET AMOUNT = 5000 WHERE AMOUNT = 3000; 
@@ -67,7 +84,7 @@ UPDATE DEPOSIT SET AMOUNT = 10000 WHERE CNAME = 'MINU';
 --10. Update deposit amount of PRAMOD to 5000 and ADATE to 1-4-96 (Use Deposit Table)
 UPDATE DEPOSIT SET AMOUNT = 5000, ADATE = '1996-04-01' WHERE CNAME = 'PRAMOD';
 
---Part–B :-
+--Partâ€“B :-
 
 --1. Give 10% Increment in Loan Amount. (Use Borrow Table)
 UPDATE BORROW SET AMOUNT = AMOUNT*1.1;
@@ -75,7 +92,7 @@ UPDATE BORROW SET AMOUNT = AMOUNT*1.1;
 --2. Customer deposits additional 20% amount to their account, update the same. (Use Deposit Table)
 UPDATE DEPOSIT SET AMOUNT = AMOUNT*1.2;
 
---Part–C :-
+--Partâ€“C :-
 --1. Update amount of loan no 321 to NULL. (Use Borrow Table)
 UPDATE BORROW SET AMOUNT = NULL WHERE LOANNO = 321;
 
@@ -94,5 +111,5 @@ UPDATE BORROW SET AMOUNT = 5000, BNAME = 'VRCE', CNAME = 'DARSHAN' WHERE LOANO =
 --6. Update the Deposit table and set the date to 01-01-2021 for all the depositor whose amount is less than 2000.
 UPDATE DEPOSIT SET ADATE = '2021-01-01' WHERE AMOUNT <2000;
 
---7. Update the Deposit table and set the date to NULL & Branch name to ‘ANDHERI whose Account No is 110.
+--7. Update the Deposit table and set the date to NULL & Branch name to â€˜ANDHERI whose Account No is 110.
 UPDATE DEPOSIT SET ADATE = NULL, BNAME = 'ANDHERI' WHERE ACTNO = 110;
