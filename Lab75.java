@@ -37,14 +37,14 @@ class MusicPlayer {
             return;
         }
         System.out.println("Removing: " + currentSong.name);
-        if (currentSong.next == currentSong) { // Only one song in the playlist
+        if (currentSong.next == currentSong) {
             currentSong = null;
         } else {
             Song prevSong = currentSong.prev;
             Song nextSong = currentSong.next;
             prevSong.next = nextSong;
             nextSong.prev = prevSong;
-            currentSong = nextSong; // Move to the next song
+            currentSong = nextSong;
         }
     }
 
@@ -92,8 +92,8 @@ public class Lab75 {
     public static void main(String[] args) {
         MusicPlayer player = new MusicPlayer();
         Scanner sc = new Scanner(System.in);
-
-        while (true) {
+        int choice;
+        do {
             System.out.println("Music Player Options:");
             System.out.println("1. Add song");
             System.out.println("2. Remove current song");
@@ -103,12 +103,12 @@ public class Lab75 {
             System.out.println("6. Display playlist");
             System.out.println("7. Exit");
 
-            int choice = sc.nextInt();
+            choice = sc.nextInt();
 
             switch (choice) {
                 case 1:
                     System.out.print("Enter song name: ");
-                    String songName = sc.nextLine();
+                    String songName = sc.next();
                     player.addSong(songName);
                     break;
                 case 2:
@@ -133,6 +133,7 @@ public class Lab75 {
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
-        }
+        } while(choice != 7);
+        sc.close();
     }
 }
