@@ -1,4 +1,3 @@
-import java.util.Random;
 import java.util.Arrays;
 
 public class Lab88 {
@@ -19,10 +18,17 @@ public class Lab88 {
 
     public static void main(String[] args) {
         int[] arr = new int[20];
-        Random rand = new Random();
 
         for (int i = 0; i < 15; i++) {
-            int randomValue = rand.nextInt(900000) + 100000;
+            int randomValue = (int)(Math.random()*1000000);
+            while(randomValue<99999)
+            {
+                if(randomValue > 100000 && randomValue < 1000000)
+                {
+                    break;
+                }
+                randomValue = (int)(Math.random()*1000000);
+            }
             insertValue(arr, randomValue); 
         }
 
