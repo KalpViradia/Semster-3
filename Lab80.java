@@ -17,7 +17,6 @@ class SymmetricTree {
     }
 
     public static boolean isMirror(TreeNode left, TreeNode right) {
-        // If both subtrees are empty, they are mirrors
         if (left == null && right == null) return true;
 
         if (left == null || right == null) return false;
